@@ -1,0 +1,30 @@
+# Health Monitoring Report
+
+## Health Endpoints
+- `/actuator/health`
+- `/actuator/info`
+- `/actuator/prometheus`
+- `/custom-health`
+
+## Expected Health Status
+The application should return `UP` when running successfully.
+
+## Readiness and Liveness
+Spring Boot actuator probes are enabled using:
+
+```yaml
+management:
+  endpoint:
+    health:
+      probes:
+        enabled: true
+```
+
+## Report Summary
+| Area | Status |
+|---|---|
+| Application Health | UP |
+| Prometheus Metrics | Enabled |
+| Grafana Dashboard | Configured |
+| Error Tracking | Enabled |
+| Centralized Logs | Configured |
