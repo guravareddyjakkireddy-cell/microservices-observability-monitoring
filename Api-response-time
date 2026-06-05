@@ -1,0 +1,25 @@
+# API Response Time Tracking
+
+## Objective
+Track response times for all APIs.
+
+## Implementation
+Spring Boot Actuator and Micrometer automatically expose HTTP request metrics.
+
+## Prometheus Metric
+```promql
+http_server_requests_seconds_count
+http_server_requests_seconds_sum
+http_server_requests_seconds_max
+```
+
+## Average Response Time Query
+```promql
+rate(http_server_requests_seconds_sum[5m]) / rate(http_server_requests_seconds_count[5m])
+```
+
+## APIs Covered
+- `/api/status`
+- `/api/error-test`
+- `/custom-health`
+- Actuator endpoints
