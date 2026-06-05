@@ -1,0 +1,25 @@
+# Logging Configuration
+
+## Objective
+Implement centralized logging using ELK Stack.
+
+## Components
+- Spring Boot structured JSON logs
+- Logback configuration
+- Logstash pipeline
+- Elasticsearch index storage
+- Kibana log visualization
+
+## Key Logs Captured
+- Request logs
+- Application service logs
+- Error logs
+- Exception stack traces
+- Timestamp, service name, thread, and log level
+
+## Validation
+1. Start containers using `docker-compose up --build`.
+2. Call `/api/status`.
+3. Call `/api/error-test?fail=true`.
+4. Open Kibana at `http://localhost:5601`.
+5. Search index pattern `observability-service-*`.
