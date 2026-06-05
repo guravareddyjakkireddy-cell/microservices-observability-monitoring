@@ -1,0 +1,27 @@
+# Monitoring Dashboard
+
+## Objective
+Configure Prometheus and Grafana for application monitoring.
+
+## Metrics Captured
+- Service uptime
+- API response time
+- Request count
+- Error rate
+- JVM memory usage
+- CPU usage
+
+## Tools
+- Prometheus scrapes metrics from `/actuator/prometheus`.
+- Grafana visualizes metrics using Prometheus datasource.
+
+## Access URLs
+- Application: `http://localhost:8080`
+- Prometheus: `http://localhost:9090`
+- Grafana: `http://localhost:3000`
+
+## Dashboard Panels
+- Service Uptime
+- API Response Time
+- API Error Rate
+- Request Count
