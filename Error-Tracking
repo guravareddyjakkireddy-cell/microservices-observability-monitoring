@@ -1,0 +1,25 @@
+# Error Tracking Documentation
+
+## Objective
+Track application errors and API failures properly.
+
+## Error Handling
+A global exception handler captures unhandled errors and returns structured error responses.
+
+## Errors Tracked
+- HTTP 4xx client errors
+- HTTP 5xx server errors
+- Runtime exceptions
+- API failures by endpoint
+
+## Validation Endpoint
+Use this endpoint to generate a test error:
+
+```bash
+curl "http://localhost:8080/api/error-test?fail=true"
+```
+
+## Grafana Query Example
+```promql
+rate(http_server_requests_seconds_count{status=~"4..|5.."}[5m])
+```
